@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.cardoperation"
-        minSdk 25
+        minSdk 27
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -18,14 +18,16 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -37,4 +39,5 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
 }

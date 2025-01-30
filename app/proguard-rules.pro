@@ -14,8 +14,20 @@
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keepattributes SourceFile,LineNumberTable
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-renamesourcefileattribute SourceFile
+
+# Keep main Activity
+-keep class com.example.cardoperation.cards { *; }
+
+# Keep classes that use reflection (prevents crashes)
+-keepattributes *Annotation*
+-keep class * extends android.app.Activity { *; }
+
+-keep class org.apache.logging.log4j.** { *; }
+-dontwarn org.apache.logging.log4j.**
+# Exclude JetBrains annotations from ProGuard
+-dontwarn org.jetbrains.**
